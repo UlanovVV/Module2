@@ -1,0 +1,12 @@
+from itertools import *
+import random
+
+field_1 = range(3, 21)  # Присваиваем значения для первого поля
+field_2 = list(combinations(range(1, 21), 2))  # Задаем все возможные комбинации для второго поля
+num_1 = random.choice(field_1)  # рандомим первое поле
+result = []
+for i in field_2:
+    if (num_1 % (i[0] + i[1])) == 0:  # задаем условие отбора для пары чисел
+        result.append(i)  # добавляем нужные совпадения в новый список
+print(num_1)
+print(*result, sep='')
